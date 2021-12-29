@@ -5,11 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using System.IO;
+using Xamarin.Essentials;
 
 namespace x_pract_8
 {
     public partial class MainPage : ContentPage
     {
+        string pathToImage = "";        
+
         public MainPage()
         {
             InitializeComponent();
@@ -21,12 +25,19 @@ namespace x_pract_8
             age.Text = "Возраст - " + Convert.ToString(today.Year - birthDate.Date.Year);
         }        
 
-        private void btn_SetImage_Clicked(object sender, EventArgs e)
+        async private void btn_SetImage_Clicked(object sender, EventArgs e)
         {
-            Image img = new Image();
-            img.Source = "dog.jpg";
-            
-            Images.Children.Add(img);            
+            if(Device.RuntimePlatform == Device.Android)
+            {
+                var result = await FilePicker.PickAsync();
+                pathToImage = result.FullPath;
+                Images.Source = pathToImage;                
+            }        
+        }
+
+        void SetImage()
+        {
+            Images.Source = "dog.jpg";            
         }
     }
 }

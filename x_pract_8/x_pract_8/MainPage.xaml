@@ -23,9 +23,7 @@
                                 </Picker.Items>
                             </Picker>
                     </StackLayout>
-                </ViewCell>                            
-
-                
+                </ViewCell> 
 
                 <SwitchCell x:Name="needHause" Text="Нужно ли общижитие?" On="False"/>
                 <SwitchCell x:Name="head" Text="является ли старостой?" On="False"/>
@@ -34,7 +32,7 @@
                     <Button x:Name="btn_SetImage" Text="Добавить фото" Clicked="btn_SetImage_Clicked"/>
                 </ViewCell>
                 <ViewCell>
-                    <StackLayout x:Name="Images" Orientation="Vertical"/>
+                    <Image x:Name="Images" HorizontalOptions="FillAndExpand" Aspect="AspectFit"/>                    
                 </ViewCell>
                 
             </TableSection>
