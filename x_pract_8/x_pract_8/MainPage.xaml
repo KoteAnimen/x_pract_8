@@ -16,7 +16,7 @@
                 <ViewCell>
                     <StackLayout Orientation="Horizontal" Margin="15,0,15,0">
                         <Label Text="Пол" VerticalOptions="Center" Margin="5,0,10,0"/>
-                        <Picker Title="Выбирите пол">
+                        <Picker x:Name="sex" Title="Выбирите пол">
                                 <Picker.Items>
                                     <x:String>Муж</x:String>
                                     <x:String>Жен</x:String>                                    
@@ -34,7 +34,15 @@
                 <ViewCell>
                     <Image x:Name="Images" HorizontalOptions="FillAndExpand" Aspect="AspectFit"/>                    
                 </ViewCell>
-                
+
+                <ViewCell>
+                    <Button x:Name="btn_Save" Text="Сохранить" Clicked="btn_Save_Clicked"/>
+                </ViewCell>
+
+                <ViewCell>
+                    <Button x:Name="btn_Load" Text="Загрузить" Clicked="btn_Load_Clicked"/>
+                </ViewCell>
+
             </TableSection>
         </TableRoot>
     </TableView>
