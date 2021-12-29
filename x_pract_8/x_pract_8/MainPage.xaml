@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="x_pract_8.MainPage">
+
+    <TableView>
+        <TableRoot>
+            <TableSection Title="Персональные данные">
+                <EntryCell x:Name="name" Label="Имя" Placeholder="Введите имя"/>
+                <EntryCell x:Name="familyName" Label="Имя" Placeholder="Введите фамилию"/>
+                <EntryCell x:Name="lastName" Label="Имя" Placeholder="Введите отчество"/>
+                <ViewCell>
+                    <DatePicker x:Name="birthDate" Margin="15,0,15,0" DateSelected="birthDate_DateSelected"></DatePicker>
+                </ViewCell>
+                <TextCell x:Name="age" Text="Возраст - "></TextCell>
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal" Margin="15,0,15,0">
+                        <Label Text="Пол" VerticalOptions="Center" Margin="5,0,10,0"/>
+                        <Picker Title="Выбирите пол">
+                                <Picker.Items>
+                                    <x:String>Муж</x:String>
+                                    <x:String>Жен</x:String>                                    
+                                </Picker.Items>
+                            </Picker>
+                    </StackLayout>
+                </ViewCell>                            
+
+                
+
+                <SwitchCell x:Name="needHause" Text="Нужно ли общижитие?" On="False"/>
+                <SwitchCell x:Name="head" Text="является ли старостой?" On="False"/>
+
+                <ViewCell>
+                    <Button x:Name="btn_SetImage" Text="Добавить фото" Clicked="btn_SetImage_Clicked"/>
+                </ViewCell>
+                <ViewCell>
+                    <StackLayout x:Name="Images" Orientation="Vertical"/>
+                </ViewCell>
+                
+            </TableSection>
+        </TableRoot>
+    </TableView>
+
+</ContentPage>
