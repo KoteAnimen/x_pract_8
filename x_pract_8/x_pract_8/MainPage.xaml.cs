@@ -137,5 +137,18 @@ namespace x_pract_8
             //LoadSecondMethod();
             LoadThridMethod();
         }
+
+        private void sex_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
+
+    public class PickerValidation : TriggerAction<Picker>
+    {
+        protected override void Invoke(Picker sender)
+        {
+            sender.TextColor = sender.SelectedIndex == 0 ? Color.Blue : Color.Pink;
+        }
     }
 }
